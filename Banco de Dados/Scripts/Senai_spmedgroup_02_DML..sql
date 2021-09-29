@@ -1,4 +1,4 @@
-USE Medical;
+USE Medical_Senai;
 GO
 --------------------------------- DML ---------------------------------
 
@@ -48,9 +48,9 @@ GO
 
 
 INSERT INTO Consulta (IDMedico, IDPaciente, IDSituacao, DataConsulta, DescricaoConsulta)
-VALUES (3, 24, 1, '20/04/2020', 'Dores abdominais '),(2, 19, 2, '01/06/2021', 'Diz que esta com vontade de tirar a propria vida'),
-(2, 20, 1, '02/07/2021', 'Paciente completamente triste'),(2, 19, 1, '02/06/2018', 'Esta com depressão profunda'),
-(1, 21, 2, '02/07/2021', ''),(3, 24, 3, '03/08/2020', 'Machucou a cabeça'),(1, 21, 3, '09/03/2020', '');
+VALUES (3, 7, 1, '20/04/2020', 'Dores abdominais '),(2, 2, 2, '01/06/2021', 'Diz que esta com vontade de tirar a propria vida'),
+(2, 3, 1, '02/07/2021', 'Paciente completamente triste'),(2, 2, 1, '02/06/2018', 'Esta com depressão profunda'),
+(1, 4, 2, '02/07/2021', ''),(3, 7, 3, '03/08/2020', 'Machucou a cabeça'),(1, 4, 3, '09/03/2020', '');
 GO
 
 

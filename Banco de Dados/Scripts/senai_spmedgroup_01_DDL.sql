@@ -1,7 +1,7 @@
-CREATE DATABASE Medical; 
+CREATE DATABASE Medical_Senai; 
 GO
 
-USE Medical;
+USE Medical_Senai;
 GO
 
 --------------------------------- DDL ---------------------------------

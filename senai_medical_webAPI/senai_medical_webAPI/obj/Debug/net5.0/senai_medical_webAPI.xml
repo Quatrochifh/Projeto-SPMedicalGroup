@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai_medical_webAPI</name>
+    </assembly>
+    <members>
+        <member name="M:senai_medical_webAPI.Controllers.ClinicasController.#ctor">
+            <summary>
+            Instancia o objeto _habilidadeRepository para que haja a referência aos métodos do repositório
+            </summary>
+        </member>
+        <member name="M:senai_medical_webAPI.Controllers.ConsultasController.#ctor">
+            <summary>
+            Instancia o objeto _habilidadeRepository para que haja a referência aos métodos do repositório
+            </summary>
+        </member>
+        <member name="M:senai_medical_webAPI.Controllers.ConsultasController.Get">
+            Lista todas as consultas de um usuario
+        </member>
+    </members>
+</doc>
