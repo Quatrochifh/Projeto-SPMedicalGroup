@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "e68d6bec-f767-4887-a1b9-e7a98ce0ace4",
+		"name": "Senai-SPMedicalGroup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Clinica",
+			"item": [
+				{
+					"name": "Clinicas.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBzcG1lZGljYWxncm91cC5jb20uYnIiLCJqdGkiOiIxIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsInJvbGUiOiIxIiwiZXhwIjoxNjMyOTM5ODA0LCJpc3MiOiJtZWRpY2FsLndlYkFwaSIsImF1ZCI6Im1lZGljYWwud2ViQXBpIn0.pQR3EFZXkXfj_RaeFDbpV75OGq_j1jc-75IjOYao5E4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cnpj\":\"52400912864477\",\r\n    \"endereço\":\"Av. Barãozinho Limeira, 532, Rio de janeiro, RJ\",\r\n    \"nomeClinica\":\"Clinica odontologica\",\r\n    \"abertura\":\"07:30\",\r\n    \"fechamento\":\"23:00\",\r\n    \"razaoSocial\":\"RJ Médical Group\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/clinicas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"clinicas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medico",
+			"item": [
+				{
+					"name": "Medico.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJydW5vQGdtYWlsLmNvbSIsImp0aSI6IjMiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIzIiwicm9sZSI6IjMiLCJleHAiOjE2MzI5NDA5NDgsImlzcyI6Im1lZGljYWwud2ViQXBpIiwiYXVkIjoibWVkaWNhbC53ZWJBcGkifQ.qFyEWxc97PHFnQshl7c6tneOfIgXa8oZ1l9FuLoWIxA.pQR3EFZXkXfj_RaeFDbpV75OGq_j1jc-75IjOYao5E4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/medicos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"medicos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consulta",
+			"item": [
+				{
+					"name": "Consulta.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBzcG1lZGljYWxncm91cC5jb20uYnIiLCJqdGkiOiIxIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsInJvbGUiOiIxIiwiZXhwIjoxNjMyOTQwOTc2LCJpc3MiOiJtZWRpY2FsLndlYkFwaSIsImF1ZCI6Im1lZGljYWwud2ViQXBpIn0.Q5AqfVEgeHXmNQl5NJ7QqwTPF9CSxVvo1Fo5DWMXYr8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/consultas/listartodas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"consultas",
+								"listartodas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta.AtualizarSituacao",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBzcG1lZGljYWxncm91cC5jb20uYnIiLCJqdGkiOiIxIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsInJvbGUiOiIxIiwiZXhwIjoxNjMyOTQwOTc2LCJpc3MiOiJtZWRpY2FsLndlYkFwaSIsImF1ZCI6Im1lZGljYWwud2ViQXBpIn0.Q5AqfVEgeHXmNQl5NJ7QqwTPF9CSxVvo1Fo5DWMXYr8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idmedico\": \"3\",\r\n  \"idpaciente\": \"5\",\r\n  \"idsituacao\": \"1\",\r\n  \"dataConsulta\": \"07/01/2022\",\r\n  \"descricaoConsulta\": \"Ira passar para um exame de rotina, pois os pais pediram\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/consultas/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"consultas",
+								"9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta.CadastrarNovaConsulta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBzcG1lZGljYWxncm91cC5jb20uYnIiLCJqdGkiOiIxIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsInJvbGUiOiIxIiwiZXhwIjoxNjMyOTQwOTc2LCJpc3MiOiJtZWRpY2FsLndlYkFwaSIsImF1ZCI6Im1lZGljYWwud2ViQXBpIn0.Q5AqfVEgeHXmNQl5NJ7QqwTPF9CSxVvo1Fo5DWMXYr8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idmedico\": \"3\",\r\n  \"idpaciente\": \"5\",\r\n  \"idsituacao\": \"3\",\r\n  \"dataConsulta\": \"07/01/2022\",\r\n  \"descricaoConsulta\": \"Ira passar para um exame de rotina\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultas.ListarTodasSodoUsuarioLogado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGVuYS5zb3V6YUBzcG1lZGljYWxncm91cC5jb20uYnIiLCJqdGkiOiIyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMiIsInJvbGUiOiIyIiwiZXhwIjoxNjMyOTQ3MTUwLCJpc3MiOiJtZWRpY2FsLndlYkFwaSIsImF1ZCI6Im1lZGljYWwud2ViQXBpIn0.5jz2HQNiD7gbv0YkjyTcThZtw1LNucpAyGajzx5C04I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/consultas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"consultas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta.AtualizarDescriçãoDaConsulta",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGVuYS5zb3V6YUBzcG1lZGljYWxncm91cC5jb20uYnIiLCJqdGkiOiIyIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMiIsInJvbGUiOiIyIiwiZXhwIjoxNjMyOTQ3MTUwLCJpc3MiOiJtZWRpY2FsLndlYkFwaSIsImF1ZCI6Im1lZGljYWwud2ViQXBpIn0.5jz2HQNiD7gbv0YkjyTcThZtw1LNucpAyGajzx5C04I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idmedico\": \"3\",\r\n  \"idpaciente\": \"5\",\r\n  \"idsituacao\": \"1\",\r\n  \"dataConsulta\": \"07/01/2022\",\r\n  \"descricao\": \"não sabe\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/consultas/descricao/9",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"consultas",
+								"descricao",
+								"9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Paciente",
+			"item": [
+				{
+					"name": "Paciente.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBzcG1lZGljYWxncm91cC5jb20uYnIiLCJqdGkiOiIxIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsInJvbGUiOiIxIiwiZXhwIjoxNjMyOTQwOTc2LCJpc3MiOiJtZWRpY2FsLndlYkFwaSIsImF1ZCI6Im1lZGljYWwud2ViQXBpIn0.Q5AqfVEgeHXmNQl5NJ7QqwTPF9CSxVvo1Fo5DWMXYr8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/pacientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Situacoes",
+			"item": [
+				{
+					"name": "SItuacoes.ListarTodos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBzcG1lZGljYWxncm91cC5jb20uYnIiLCJqdGkiOiIxIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsInJvbGUiOiIxIiwiZXhwIjoxNjMyOTQwOTc2LCJpc3MiOiJtZWRpY2FsLndlYkFwaSIsImF1ZCI6Im1lZGljYWwud2ViQXBpIn0.Q5AqfVEgeHXmNQl5NJ7QqwTPF9CSxVvo1Fo5DWMXYr8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/situacoes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"situacoes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tipo de usuario",
+			"item": [
+				{
+					"name": "TipoUsuarios.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbUBzcG1lZGljYWxncm91cC5jb20uYnIiLCJqdGkiOiIxIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiMSIsInJvbGUiOiIxIiwiZXhwIjoxNjMyOTQwOTc2LCJpc3MiOiJtZWRpY2FsLndlYkFwaSIsImF1ZCI6Im1lZGljYWwud2ViQXBpIn0.Q5AqfVEgeHXmNQl5NJ7QqwTPF9CSxVvo1Fo5DWMXYr8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"perfisDeUsuario\" : \"Secretarios\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/tiposUsuarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"tiposUsuarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Login.Medical",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"helena.souza@spmedicalgroup.com.br\",\r\n    \"senha\":\"helena789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
