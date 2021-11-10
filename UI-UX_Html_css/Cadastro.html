@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Sp-Medical</title>
+    <link rel="stylesheet" href="css/Style.css"/>
+</head>
+<body class="corpov">
+    <header>
+        <div class="container_div_header">
+            <a class="menuHamburger" href="#"><img src="Img/Hamburger.png" alt="logo do Site"></a>
+            <a class="logoHeader" href="#"><img src="Img/logo_spmedgroup_v2 1.png" alt="logo do Site"></a>
+            <nav class="entrar">
+                <a href="#" class="span_entrar"><span>entrar</span></a>
+            </nav>
+        </div>
+    </header>
+
+<main class="fundo_cadastro">
+ <section class="section">
+   
+    <form class="box_Listar">
+
+           <h2 class="usu_cada">usuario cadastrados</h2>
+
+
+        <div class="retangulos">
+            <img class="imagemfotinho" src="Img/drhelena.png" alt="drhelena">
+            <span class="nome_lista">DRA. Helena Strada</span>
+            <span class="que_e">Medico</span>
+        </div>
+
+        <div class="retangulos">
+            <img class="imagemfotinho" src="Img/dr_loreal.png" alt="drhelena">
+            <span class="nome_lista">Loren i</span>
+            <span class="que_e">Medico</span>
+        </div>
+
+        <div class="retangulos">
+            <img class="imagemfotinho" src="Img/Paciente-fernando.png" alt="drhelena">
+            <span class="nome_lista">Fernando</span>
+            <span class="que_e">Paciente</span>
+        </div>
+
+
+    </form>
+ 
+    <form class="box_cadastro">
+
+        <div class="escritas">
+        <imput 
+        class= "cadastro_esc"
+        placeholder="Email"
+        type="text"
+        name="Email"
+        id="cadastro__email"/>
+        </div>
+
+        <div class="escritas">
+            <input
+            class= "cadastro_esc"
+            placeholder="Senha"
+            type="password"
+            name="Senha"
+            id="cadastro__senha"/>
+        </div>
+
+        <div class="escritas">
+            <input 
+            class="cadastro_esc"
+            type="text"
+            name="cpf" \
+			pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \
+		   placeholder="Digite um CPF no formato: xxx.xxx.xxx-xx">
+        </div>
+
+        <div class="boton_Cadastro">
+            <button class="btn__cadastro" id="btn__cadastro" href="#">
+                Cadastre-se
+            </button>
+            <span>Ja tem uma conta? Faça Login</span>
+        </div>
+        
+    </form>
+
+ </section>
+
+</main>    
+</body>
+</html>
