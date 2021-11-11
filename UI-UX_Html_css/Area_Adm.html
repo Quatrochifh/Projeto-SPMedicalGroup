@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração Sp-Medical</title>
+    <link rel="stylesheet" href="css/Style.css"/>
+</head>
+<body class="corpoadm">
+    <header>
+        <div class="container_div_header">
+            <a class="menuHamburger" href="#"><img src="Img/Hamburger.png" alt="logo do Site"></a>
+            <a class="logoHeader" href="#"><img src="Img/logo_spmedgroup_v2 1.png" alt="logo do Site"></a>
+            <nav class="entrar">
+                <a href="#" class="span_entrar"><span>entrar</span></a>
+            </nav>
+        </div>
+    </header>
+
+<main class="fundo_cadastroadm">
+ <section class="sectionadm">
+   
+    <form class="box_Listaradm">
+
+           <h2 class="usu_cadaadm">usuario cadastrados</h2>
+
+        <div class="qualquer">   
+        <div class="retangulos1adm">
+            <img class="imagemfotinhoadm" src="Img/drhelena.png" alt="drhelena">
+        <div class="slaadm">
+            <span class="nome_listaadm">DRA. Helena Strada</span>
+            <span class="que_eadm">Medico</span>
+        </div>
+            
+        </div>
+
+        <div class="retangulos2adm">
+            <img class="imagemfotinhoadm" src="Img/dr_loreal.png" alt="drhelena">
+        <div class="slaadm">
+            <span class="nome_listaadm">Loren i</span>
+            <span class="que_eadm">Medico</span>
+        </div>
+        </div>
+
+        <div class="retangulos3adm">
+            <img class="imagemfotinhoadm" src="Img/Paciente-fernando.png" alt="drhelena">
+        <div class="slaadm">  
+            <span class="nome_listaadm">Fernando</span>
+            <span class="que_eadm">Paciente</span>
+        </div>
+        </div>
+    </div>
+
+
+    </form>
+ 
+    <form class="box_cadastroadm">
+
+        <h2 class="usu_cadaadm">cadastrar</h2>
+
+
+        <input 
+        class= "cadastro_padm"
+        placeholder="       Nome Paciente"
+        type="text"
+        name="NomePac"
+        id="Consuta__NomePac"/>
+        
+
+       <input
+            class= "cadastro_madm"
+            placeholder="       Nome Medico"
+            type="text"
+            name="NomeMed"
+            id="Consuta__NomeMed"/>
+
+            
+        <div class="Situação_abre">
+                <!-- <span> Tipo de Usuario </span> -->
+                
+                    <select name="" id="">
+                        <option value="" disabled selected >Situação</option>
+                        <option value="ad" style="color: rgb(84, 255, 5);">Realizada</option>
+                        <option value="med" style="color: rgb(247, 242, 0);">Agendada</option>
+                        <option value="pac" style="color: rgb(248, 6, 6);">Cancelada</option>
+                    </select>
+                 
+            </div>
+
+            <input
+            class= "cadastro_dadm"
+            placeholder="       Data do agendamento da consulta"
+            type="text"
+            name="NomeMed"
+            id="Consuta__NomeMed"/>
+
+            <input
+            class= "cadastro_dcadm"
+            placeholder="       Descrição da consulta"
+            type="text"
+            name="NomeMed"
+            id="Consuta__NomeMed"/>
+
+    
+            <button class="btn__cadastroadm" id="btn__cadastro" href="#">
+                Cadastre-se
+            </button>
+        
+    </form>
+
+ </section>
+
+</main>    
+</body>
+</html>

@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Sp-Medical</title>
-    <link rel="stylesheet" href="css/Style.css"/>
+    <link rel="stylesheet" href="css/Style.css" />
 </head>
-<body class="corpov">
+
+<body class="corpoca">
     <header>
         <div class="container_div_header">
             <a class="menuHamburger" href="#"><img src="Img/Hamburger.png" alt="logo do Site"></a>
@@ -18,79 +20,91 @@
         </div>
     </header>
 
-<main class="fundo_cadastro">
- <section class="section">
-   
-    <form class="box_Listar">
+    <main class="fundo_cadastro">
+        <section class="section">
 
-           <h2 class="usu_cada">usuario cadastrados</h2>
+            <form class="box_Listar">
+
+                <h2 class="usu_cada">usuario cadastrados</h2>
+
+                <div class="qualquer">
+                    <div class="retangulos1">
+                        <img class="imagemfotinho" src="Img/drhelena.png" alt="drhelena">
+                        <div class="sla">
+                            <span class="nome_lista">DRA. Helena Strada</span>
+                            <span class="que_e">Medico</span>
+                        </div>
+
+                    </div>
+
+                    <div class="retangulos2">
+                        <img class="imagemfotinho" src="Img/dr_loreal.png" alt="drhelena">
+                        <div class="sla">
+                            <span class="nome_lista">Loren i</span>
+                            <span class="que_e">Medico</span>
+                        </div>
+                    </div>
+
+                    <div class="retangulos2">
+                        <img class="imagemfotinho" src="Img/dr_loreal.png" alt="drhelena">
+                        <div class="sla">
+                            <span class="nome_lista">Loren i</span>
+                            <span class="que_e">Medico</span>
+                        </div>
+                    </div>
+
+                    <div class="retangulos2">
+                        <img class="imagemfotinho" src="Img/dr_loreal.png" alt="drhelena">
+                        <div class="sla">
+                            <span class="nome_lista">Loren i</span>
+                            <span class="que_e">Medico</span>
+                        </div>
+                    </div>
+
+                    <div class="retangulos2">
+                        <img class="imagemfotinho" src="Img/dr_loreal.png" alt="drhelena">
+                        <div class="sla">
+                            <span class="nome_lista">Loren i</span>
+                            <span class="que_e">Medico</span>
+                        </div>
+                    </div>
+
+                    <div class="retangulos3">
+                        <img class="imagemfotinho" src="Img/Paciente-fernando.png" alt="drhelena">
+                        <div class="sla">
+                            <span class="nome_lista">Fernando</span>
+                            <span class="que_e">Paciente</span>
+                        </div>
+                    </div>
+                </div>
 
 
-        <div class="retangulos1">
-            <img class="imagemfotinho" src="Img/drhelena.png" alt="drhelena">
-        <div class="sla">
-            <span class="nome_lista">DRA. Helena Strada</span>
-            <span class="que_e">Medico</span>
-        </div>
-            
-        </div>
 
-        <div class="retangulos2">
-            <img class="imagemfotinho" src="Img/dr_loreal.png" alt="drhelena">
-        <div class="sla">
-            <span class="nome_lista">Loren i</span>
-            <span class="que_e">Medico</span>
-        </div>
-        </div>
+            </form>
 
-        <div class="retangulos3">
-            <img class="imagemfotinho" src="Img/Paciente-fernando.png" alt="drhelena">
-        <div class="sla">  
-            <span class="nome_lista">Fernando</span>
-            <span class="que_e">Paciente</span>
-        </div>
-        </div>
+            <form class="box_cadastro">
+
+                <h2 class="usu_cada">cadastrar</h2>
 
 
-    </form>
- 
-    <form class="box_cadastro">
-
-        <h2 class="usu_cada">cadastrar</h2>
+                <input class="cadastro_e" placeholder="Email" type="text" name="Email" id="cadastro__email" />
 
 
-        <input 
-        class= "cadastro_e"
-        placeholder="Email"
-        type="text"
-        name="Email"
-        id="cadastro__email"/>
-        
+                <input class="cadastro_s" placeholder="Senha" type="password" name="Senha" id="cadastro__senha" />
 
-       <input
-            class= "cadastro_s"
-            placeholder="Senha"
-            type="password"
-            name="Senha"
-            id="cadastro__senha"/>
+                <input class="cadastro_c" type="text" name="cpf" \ pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \
+                    placeholder="Digite um CPF no formato: xxx.xxx.xxx-xx" id="cadastro__id" />
 
-         <input 
-            class="cadastro_c"
-            type="text"
-            name="cpf" \
-			pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" \
-		   placeholder="Digite um CPF no formato: xxx.xxx.xxx-xx"
-           id="cadastro__id"/>
+                <button class="btn__cadastro" id="btn__cadastro" href="#">
+                    Cadastre-se
+                </button>
+                <span class="faca_login">Ja tem uma conta? faça <span class="azul_lo"> Login</span> </span>
 
-            <button class="btn__cadastro" id="btn__cadastro" href="#">
-                Cadastre-se
-            </button>
-            <span class="faca_login">Ja tem uma conta? faça <span class="azul_lo"> Login</span> </span>
-        
-    </form>
+            </form>
 
- </section>
+        </section>
 
-</main>    
+    </main>
 </body>
+
 </html>
