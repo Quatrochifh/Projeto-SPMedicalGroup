@@ -738,3 +738,149 @@ option{
     margin-top: 8px;
 }
 
+/* ---AREA DO MEDICO---AREA DO MEDICO---AREA DO MEDICO---AREA DO MEDICO---AREA DO MEDICO */
+
+
+.fundo_cadastromed{
+    background-image: url("../Img/Area_medico.png");
+    height: 933px;
+    background-repeat: round;
+}  
+
+.sectionmed{
+        display: flex;
+    }
+
+.box_Listarmed{
+    background: #FFFFFF;
+    border-radius: 86px;
+    display: inline-grid;
+    margin-inline-start: 6vw;
+    margin-top: 12%;
+    margin-left: 130px;
+    width: 1124px;
+    height: 627px;
+}
+
+
+.box_Listarmed ::-webkit-scrollbar{
+    width: 9px;
+}
+
+.box_Listarmed ::-webkit-scrollbar-track {
+    background: #94b5fc;      
+  }
+  
+.box_Listarmed::-webkit-scrollbar-thumb {
+    background-color: gray;   
+    border-radius: 20px;       
+    border: 3px solid  #94b5fc;   
+  }
+
+
+
+
+.box_cadastromed{
+    background: #FFFFFF;
+    border-radius: 86px;
+    display: inline-grid;
+    margin-inline-start: 6vw;
+    margin-top: 14%;
+    width: 543px;
+    height: 592px;
+}
+
+.usu_cadamed{
+    text-transform: uppercase;
+    font-family: Sarabun;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 109px;
+    margin-top: 20px;
+    color: #5489F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.retangulos1med{
+    margin-left: 46px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 57px;
+    width: 272px;
+    height: 70px;
+    margin-bottom: 17px;
+    display: flex;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.retangulos2med{
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 57px;
+    width: 272px;
+    height: 70px;
+    margin-bottom: 17px;
+    margin-left: 48px;
+    display: flex;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.retangulos3med{
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    border-radius: 57px;
+    width: 272px;
+    height: 70px;
+    margin-bottom: 110px;
+    margin-left: 48px;
+    display: flex;
+    align-content: stretch;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+
+.imagemfotinhomed{
+    width: 54px;
+    height: 54px;
+    margin-left: 13px;
+    margin-top: 8px;
+    border-radius: 188px;
+}
+
+.nome_listamed{
+    font-family: Sarabun;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 31px;
+    color: #010101;
+}
+
+.que_emed{
+    font-family: Sarabun;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 23px;
+    color: #000000;
+    display: flex;
+}
+
+.slamed{
+    margin-left: 18px;
+    margin-top: 8px;
+}

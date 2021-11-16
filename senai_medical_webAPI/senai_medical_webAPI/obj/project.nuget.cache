@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "cQ3kVNuRM4gm1qpyrFVW03Q9Ot4oCMEoArUPsXbQ0nGEZdgBcFGTdKj+eAg0VTC0PImWhK5xLMRiqiq5Wt7lXw==",
+  "dgSpecHash": "YZF+VDFO/yPpR1FzKd89eKAxhpGS1y+nr1levz1D9bHuibpF6wwc4yC8+riySgYUPx93cF+sqSodv6WaAJ5Vmg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\quatr\\OneDrive\\Documentos\\SpMedicalGroup\\senai_medical_webAPI\\senai_medical_webAPI\\senai_medical_webAPI.csproj",
+  "projectFilePath": "C:\\Users\\quatr\\OneDrive\\Documentos\\Projeto-SPMedicalGroup\\senai_medical_webAPI\\senai_medical_webAPI\\senai_medical_webAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\quatr\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\quatr\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.10\\microsoft.aspnetcore.authentication.jwtbearer.5.0.10.nupkg.sha512",
