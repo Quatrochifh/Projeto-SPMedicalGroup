@@ -5,23 +5,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 import reportWebVitals from './reportWebVitals';
-import {  Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 
 
 import App from '../src/pages/home/App';
-import Adm from '../src/pages/administrador/Administrador'
-import NotFound from '../src/pages/notFound/NotFound';
+import Administrador from '../src/pages/administrador/Administrador'
+import NotFound from '../src/pages/notfound/NotFound';
 
 const routing = (
   <Router>
     <div>
-      <Routes>
-        <Route exact path="/app" element={App} />
-        <Route path="/adm" element={Adm} />
-        <Route path="/notfound" element={NotFound} />
-        {/* <Route path="/*" component={NotFound} /> Outra forma */}
-        <Redirect to="/notfound" />
-      </Routes>
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route path="/adm" component={Administrador} />
+        <Route path="/notfound" component={NotFound} />
+        <Redirect to="/Notfound" />
+      </Switch>
     </div>
   </Router>
 )
