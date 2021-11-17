@@ -9,8 +9,9 @@ import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-d
 
 
 import App from '../src/pages/home/App';
-import Administrador from '../src/pages/administrador/Administrador'
+import Administrador from './pages/administrador/Administrador_Consulta'
 import NotFound from '../src/pages/notfound/NotFound';
+import Login from '../src/pages/login/Login'
 
 const routing = (
   <Router>
@@ -18,6 +19,7 @@ const routing = (
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="/adm" component={Administrador} />
+        <Route path="/Login" component={Login} />
         <Route path="/notfound" component={NotFound} />
         <Redirect to="/Notfound" />
       </Switch>

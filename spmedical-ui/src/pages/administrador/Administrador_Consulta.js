@@ -1,3 +1,4 @@
+//import '../../assets/css/Style.css';
 import { Component } from 'react';
 
 export default class Administrador extends Component{
