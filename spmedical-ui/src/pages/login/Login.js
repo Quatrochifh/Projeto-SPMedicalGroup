@@ -129,7 +129,42 @@ export default class Login extends Component {
                 </div>
               </div>
             </form>
-    </section>
+
+            <form/>
+ 
+ <form className="box_cadastrolo">
+
+     <h2 className="usu_cadalo">cadastrar</h2>
+
+
+     <input 
+     className= "cadastro_elo"
+     placeholder="Email"
+     type="text"
+     name="Email"
+     id="cadastro__email"/>
+     
+
+    <input
+         className= "cadastro_slo"
+         placeholder="Senha"
+         type="password"
+         name="Senha"
+         id="cadastro__senha"/>
+
+      <input 
+         className="cadastro_clo"
+         type="text"
+         name="cpf" 
+   pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+    placeholder="Digite um CPF no formato: xxx.xxx.xxx-xx"
+        id="cadastro__id"/>
+
+         <button className="btn__cadastrolo" id="btn__cadastro" href="#">Cadastre-se</button>
+         <span className="faca_loginlo">Não tem uma conta? faça <span class="verde_lo">Cadastro</span></span>
+     
+ </form>
+ </section>
 </main>
 </div>
 )}

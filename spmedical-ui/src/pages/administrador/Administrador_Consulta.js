@@ -1,51 +1,204 @@
 //import '../../assets/css/Style.css';
 import { Component } from 'react';
+import axios from "axios";
+
+import img from '../../assets/img/drhelena.png'
 
 export default class Administrador extends Component{
     constructor(props){
         super(props);
         this.state = {
-            listaTiposEventos : [ { idTipoEvento : 1, titulo : 'C#' }, { idTipoEvento : 2, titulo : 'SQL' }, { idTipoEvento : 3, titulo : 'ReactJS' } ],
-            titulo : ''
+            listaConsultas: [],
+            listaPacientes: [],
+            listaMedicos: [],
+            listaSituacao: [],
+            IdPaciente: 0,
+            IdMedico: 0,
+            IdSituacao: 0,
+            dataConsulta: new Date()
         };
     };
 
-    componentDidMount(){
-        //
-    };
+    buscaPacientes = () => {
+        axios("http://localhost:5000/api/pacientes", {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+            .then(resposta => {
+                if (resposta.status === 200) {
+                    this.state({ listaPacientes: resposta.data })
+                    console.log(this.state.listaPacientes)
+                }
+            })
+            .catch(erro => console.log(erro))
+    }
+
+    buscaMedicos = () => {
+        axios("http://localhost:5000/api/medicos", {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+            .then(resposta => {
+                if (resposta.status === 200) {
+                    this.state({ listaMedicos: resposta.data })
+                    console.log(this.state.listaMedicos)
+                }
+            })
+            .catch(erro => console.log(erro))
+    }
+
+    buscaSituacoes = () => {
+        axios("http://localhost:5000/api/situacoes", {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+            .then(resposta => {
+                if (resposta.status === 200) {
+                    this.state({ listaSituacao: resposta.data })
+                    console.log(this.state.listaSituacao)
+                }
+            })
+            .catch(erro => console.log(erro))
+    }
+
+    buscaConsultas = () => {
+        axios("http://localhost:5000/api/Consultas/listarTodas", {
+            headers: {
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
+            }
+        })
+            .then(resposta => {
+                if (resposta.status === 200) {
+                    this.state({ listaConsultas: resposta.data })
+                }
+            })
+            .catch(erro => console.log(erro))
+    }
+
+    cadastrarConsulta = (event) => {
+        event.preventDefault();
+
+        let consulta = {
+            IdPaciente: this.state.IdPaciente,
+            IdMedico: this.state.IdMedico,
+            dataConsulta: new Date(this.state.dataConsulta),
+            IdSituacao: this.state.IdSituacao
+        };
+        axios.post("http://localhost:5000/api/Consultas", consulta, {
+            headers: {
+                'Authoriztion': 'Bearer' + localStorage.getItem('usuario-login')
+            }
+        })
+            .then(resposta => {
+                if (resposta.status === 201) {
+                    console.log('foi !!!')
+                }
+            })
+            .catch(erro => {
+                console.log(erro);
+            })
+            .then(this.buscaConsultas);
+    }
+
+
+    componentDidMount() {
+        this.buscaConsultas();
+        this.buscaPacientes();
+        this.buscaMedicos();
+        this.buscaSituacoes();
+    }
+
+    atualizaStateCampo = (campo) => {
+        this.setState({ [campo.target.name]: campo.target.value })
+    }
+
+
+
 
     render(){
         return(
             <div>
-                <main>
-                    {/* Lista de tipos de eventos */}
-                    <section>
-                        <h2>Lista de tipos de eventos</h2>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Título</th>
-                                </tr>
-                            </thead>
+                <main class="fundo_cadastroadm">
+        <section class="sectionadm">
 
-                            <tbody>
-                                {
-                                    this.state.listaTiposEventos.map( (tipoEvento) => {
-                                        return(
-                                            <tr key={tipoEvento.idTipoEvento}>
-                                                <td>{tipoEvento.idTipoEvento}</td>
-                                                <td>{tipoEvento.titulo}</td>
-                                            </tr>
-                                        )
-                                    } )                                 
-                                }
-                            </tbody>
-                        </table>
-                    </section>
+            <form class="box_Listaradm">
 
-                    {/* Cadastro de tipos de eventos */}
-                </main>
+                <h2 class="usu_cadaadm">usuario cadastrados</h2>
+
+                <div class="qualquer">
+                    <div class="retangulos1adm">
+                        <img class="imagemfotinhoadm" src={img} alt="drhelena" />
+                        <div class="slaadm">
+                            <span class="nome_listaadm">DRA. Helena Strada</span>
+                            <span class="que_eadm">Medico</span>
+                        </div>
+
+                    </div>
+
+                    <div class="retangulos2adm">
+                        <img class="imagemfotinhoadm"  src={img} alt="drhelena" />
+                        <div class="slaadm">
+                            <span class="nome_listaadm">Loren i</span>
+                            <span class="que_eadm">Medico</span>
+                        </div>
+                    </div>
+
+                    <div class="retangulos3adm">
+                        <img class="imagemfotinhoadm"  src={img} alt="drhelena" />
+                        <div class="slaadm">
+                            <span class="nome_listaadm">Fernando</span>
+                            <span class="que_eadm">Paciente</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+    <form class="box_cadastroadm">
+
+<h2 class="usu_cadaadm">cadastrar</h2>
+
+
+<input class="cadastro_padm" placeholder="       Nome Paciente" type="text" name="NomePac"
+    id="Consuta__NomePac" />
+
+
+<input class="cadastro_madm" placeholder="       Nome Medico" type="text" name="NomeMed"
+    id="Consuta__NomeMed" />
+
+
+<div class="Situação_abre">
+
+    <select name="" id="">
+        <option value="" disabled selected>Situação</option>
+        <option value="ad" >Realizada</option>
+        <option value="med" >Agendada</option>
+        <option value="pac">Cancelada</option>
+    </select>
+
+</div>
+
+<input class="cadastro_dadm" placeholder="       Data do agendamento da consulta" type="text"
+    name="NomeMed" id="Consuta__NomeMed" />
+
+<input class="cadastro_dcadm" placeholder="       Descrição da consulta" type="text" name="NomeMed"
+    id="Consuta__NomeMed" />
+
+
+<button class="btn__cadastroadm" id="btn__cadastro" href="#">
+    Cadastre-se
+</button>
+
+</form>
+
+
+
+        </section>
+
+        </main>
+
             </div>
         )
     }
