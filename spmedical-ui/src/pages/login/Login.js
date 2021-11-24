@@ -109,7 +109,7 @@ export default class Login extends Component {
 
      <input 
      className= "cadastro_elo"
-     placeholder="Email"
+     placeholder="    Email"
      type="text"
      name="Email"
      id="cadastro__email"/>
@@ -117,7 +117,7 @@ export default class Login extends Component {
 
     <input
          className= "cadastro_slo"
-         placeholder="Senha"
+         placeholder="   Senha"
          type="password"
          name="Senha"
          id="cadastro__senha"/>
@@ -127,7 +127,7 @@ export default class Login extends Component {
          type="text"
          name="cpf" 
    pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
-    placeholder="Digite um CPF no formato: xxx.xxx.xxx-xx"
+    placeholder="   Digite um CPF no formato: xxx.xxx.xxx-xx"
         id="cadastro__id"/>
 
          <button className="btn__cadastrolo" id="btn__cadastro" href="#">Cadastre-se</button>

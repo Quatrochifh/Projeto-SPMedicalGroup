@@ -12,12 +12,31 @@ export default class Administrador extends Component{
             listaPacientes: [],
             listaMedicos: [],
             listaSituacao: [],
+            listaTodos: [],
             IdPaciente: 0,
             IdMedico: 0,
             IdSituacao: 0,
             dataConsulta: new Date()
         };
     };
+
+    buscarTipoEventos = () => {
+        console.log('agora vamos fazer a chamada para a api.');
+
+        fetch('http://localhost:5000/api/??????????', {
+          headers: {
+            Authorization: 'Bearer ' + localStorage.getItem('usuario-login'),
+          },
+        })
+    
+          .then((resposta) => resposta.json())
+    
+          .then((dados) => this.setState({ listaTiposEventos: dados }))
+    
+          .catch((erro) => console.log(erro));
+      };
+
+
 
     buscaPacientes = () => {
         axios("http://localhost:5000/api/pacientes", {
@@ -129,30 +148,16 @@ export default class Administrador extends Component{
                 <h2 class="usu_cadaadm">usuario cadastrados</h2>
 
                 <div class="qualquer">
+                {listaConsultas.map((listar) => {
+                    return (
                     <div class="retangulos1adm">
                         <img class="imagemfotinhoadm" src={img} alt="drhelena" />
-                        <div class="slaadm">
+                        <div class="slaadm" >
                             <span class="nome_listaadm">DRA. Helena Strada</span>
                             <span class="que_eadm">Medico</span>
-                        </div>
-
-                    </div>
-
-                    <div class="retangulos2adm">
-                        <img class="imagemfotinhoadm"  src={img} alt="drhelena" />
-                        <div class="slaadm">
-                            <span class="nome_listaadm">Loren i</span>
-                            <span class="que_eadm">Medico</span>
-                        </div>
-                    </div>
-
-                    <div class="retangulos3adm">
-                        <img class="imagemfotinhoadm"  src={img} alt="drhelena" />
-                        <div class="slaadm">
-                            <span class="nome_listaadm">Fernando</span>
-                            <span class="que_eadm">Paciente</span>
-                        </div>
-                    </div>
+                        </div>     
+                    </div> )})}
+        
                 </div>
             </form>
 
