@@ -21,7 +21,7 @@ namespace senai_medical_webAPI
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            //Documentação do swagger
+            //Documentaï¿½ï¿½o do swagger
             //https://docs.microsoft.com/pt-br/aspnet/core/tutorials/getting-started-with-swashbuckle?view=aspnetcore-5.0&tabs=visual-studio
             services
                   .AddControllers()
@@ -30,6 +30,18 @@ namespace senai_medical_webAPI
                       options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
                       options.SerializerSettings.NullValueHandling = NullValueHandling.Ignore;
                   });
+
+             services.AddCors(options =>
+                {
+                    options.AddPolicy("CorsPolicy",
+                                    builder =>
+                                    {
+                                        builder.WithOrigins("http://localhost:3000")
+                                        .AllowAnyHeader()
+                                        .AllowAnyMethod();
+                                    });
+                });
+
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
@@ -86,11 +98,13 @@ namespace senai_medical_webAPI
                 c.RoutePrefix = string.Empty;
             });
 
-            // Habilita a autenticação
+            // Habilita a autenticaï¿½ï¿½o
             app.UseAuthentication();        // 401
 
-            // Habilita a autorização
+            // Habilita a autorizaï¿½ï¿½o
             app.UseAuthorization();         // 403
+
+            app.UseCors("CorsPolicy");     //Usar cors
 
 
             app.UseEndpoints(endpoints =>

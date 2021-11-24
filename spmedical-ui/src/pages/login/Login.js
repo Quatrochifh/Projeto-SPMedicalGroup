@@ -4,8 +4,8 @@ import axios from 'axios';
 import { parseJwt } from "../../services/auth";
 
 import '../../assets/css/Style.css';
-import headerTodos from '../../components/header';
-import img from '../../assets/img/drhelena.png';
+// import headerTodos from '../../components/header';
+//import img from '../../assets/img/drhelena.png';
 
 export default class Login extends Component {
   constructor(props) {
@@ -96,43 +96,11 @@ export default class Login extends Component {
   {
     return (
       <div>
-        <headerTodos />
+        {/* <headerTodos /> */}
         <main className="fundo_cadastrolo">
     
           <section className="sectionlo">
-            <form className="box_Listarlo">
-
-              <h2 className="usu_cadalo">usuario cadastrados</h2>
-
-              <div className="qualquer">
-                <div className="retangulos1lo">
-                  <img className="imagemfotinholo" src= {img} alt="drhelena"/>
-                  <div className="slalo">
-                    <span className="nome_listalo">DRA. Helena Strada</span>
-                    <span className="que_elo">Medico</span>
-                  </div>
-
-                </div>
-
-                <div className="retangulos2lo">
-                  <img className="imagemfotinholo" src= {img} alt="drhelena" />
-                  <div className="slalo">
-                    <span className="nome_listalo">Loren i</span>
-                    <span className="que_elo">Medico</span>
-                  </div>
-                </div>
-
-                <div className="retangulos3lo">
-                  <img className="imagemfotinholo" src={img} alt="drhelena" />
-                  <div className="slalo">
-                    <span className="nome_listalo">Fernando</span>
-                    <span className="que_elo">Paciente</span>
-                  </div>
-                </div>
-              </div>
-            </form>
-
-            <form/>
+        
  
  <form className="box_cadastrolo">
 
