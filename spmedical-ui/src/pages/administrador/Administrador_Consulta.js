@@ -148,15 +148,15 @@ export default class Administrador extends Component{
                 <h2 class="usu_cadaadm">usuario cadastrados</h2>
 
                 <div class="qualquer">
-                {listaConsultas.map((listar) => {
-                    return (
+                {/* {listaConsultas.map((listar) => { */}
+                    {/* return ( */}
                     <div class="retangulos1adm">
                         <img class="imagemfotinhoadm" src={img} alt="drhelena" />
                         <div class="slaadm" >
                             <span class="nome_listaadm">DRA. Helena Strada</span>
                             <span class="que_eadm">Medico</span>
                         </div>     
-                    </div> )})}
+                    </div> 
         
                 </div>
             </form>

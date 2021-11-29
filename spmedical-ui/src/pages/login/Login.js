@@ -92,50 +92,54 @@ export default class Login extends Component {
 
 
 
-  render() 
-  {
+  render() {
     return (
       <div>
         {/* <headerTodos /> */}
         <main className="fundo_cadastrolo">
-    
+
           <section className="sectionlo">
-        
- 
- <form className="box_cadastrolo">
-
-     <h2 className="usu_cadalo">cadastrar</h2>
 
 
-     <input 
-     className= "cadastro_elo"
-     placeholder="    Email"
-     type="text"
-     name="Email"
-     id="cadastro__email"/>
-     
+            <form className="box_cadastrolo" onSubmit={this.efetuarLogin} >
 
-    <input
-         className= "cadastro_slo"
-         placeholder="   Senha"
-         type="password"
-         name="Senha"
-         id="cadastro__senha"/>
+              <h2 className="usu_cadalo">cadastrar</h2>
 
-      <input 
-         className="cadastro_clo"
-         type="text"
-         name="cpf" 
-   pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
-    placeholder="   Digite um CPF no formato: xxx.xxx.xxx-xx"
-        id="cadastro__id"/>
 
-         <button className="btn__cadastrolo" id="btn__cadastro" href="#">Cadastre-se</button>
-         <span className="faca_loginlo">Não tem uma conta? faça <span class="verde_lo">Cadastro</span></span>
-     
- </form>
- </section>
-</main>
-</div>
-)}
+              <input className="cadastro_elo" placeholder="    Email" value={this.state.email} onChange={this.atualizaStateCampo}
+                type="text" name="email" id="cadastro__email" />
+
+
+              <input
+                className="cadastro_slo"
+                placeholder="   Senha" value={this.state.senha} onChange={this.atualizaStateCampo}
+                type="password" name="senha" id="cadastro__senha" />
+
+              <p style={{ color: 'red' }}>{this.state.errorMessage}</p>
+              {
+                this.state.loading === true && (
+                  <button type="submit" disabled>Loading...</button>
+                )
+              }
+              {
+                this.state.loading === false && (
+                  <button type="submit"
+                    disabled={
+                      this.state.email === '' || this.state.senha === ''
+                        ? 'none'
+                        : ''
+                    }
+                  >Login</button>
+                )
+              }
+
+              <button className="btn__cadastrolo" id="btn__cadastro" href="#">Cadastre-se</button>
+              <span className="faca_loginlo">Não tem uma conta? faça <span class="verde_lo">Cadastro</span></span>
+
+            </form>
+          </section>
+        </main>
+      </div>
+    )
+  }
 }
