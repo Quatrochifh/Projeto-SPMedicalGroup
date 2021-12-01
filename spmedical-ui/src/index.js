@@ -17,7 +17,7 @@ const routing = (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={App} />
+        <Route exact path="/home" component={App} />
         <Route path="/adm" component={Administrador} />
         <Route path="/Login" component={Login} />
         <Route path="/notfound" component={NotFound} />

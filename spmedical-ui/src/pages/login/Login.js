@@ -4,7 +4,7 @@ import axios from 'axios';
 import { parseJwt } from "../../services/auth";
 
 import '../../assets/css/Style.css';
-// import headerTodos from '../../components/header';
+ //import headerTodos from '../../components/header';
 //import img from '../../assets/img/drhelena.png';
 
 export default class Login extends Component {
@@ -51,6 +51,8 @@ export default class Login extends Component {
 
           console.log(this.props);
 
+          console.log('cadastro feito')
+
           // verifica se o usuário logado é do tipo administrador
           switch (parseJwt().role) {
             case "1":
@@ -60,7 +62,7 @@ export default class Login extends Component {
               this.props.history.push('/med')
               break;
             case "3":
-              this.props.history.push('/paciente')
+              this.props.history.push('/home')
               break;
 
             default:
@@ -96,12 +98,14 @@ export default class Login extends Component {
     return (
       <div>
         {/* <headerTodos /> */}
+
+        
         <main className="fundo_cadastrolo">
 
           <section className="sectionlo">
 
 
-            <form className="box_cadastrolo" onSubmit={this.efetuarLogin} >
+            <form className="box_cadastrolo" onSubmit={this.efetuaLogin} >
 
               <h2 className="usu_cadalo">cadastrar</h2>
 
