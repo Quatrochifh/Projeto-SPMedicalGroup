@@ -1,56 +1,136 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import {Component} from 'react';
+import React,{ Component } from 'react';
+import { StyleSheet, ImageBackground, View, TextInput, TouchableOpacity,Text } from 'react-native'
 import api from '../services/api';
 
 export default class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            email: '',
-            senha: '',
-        };
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: 'adm@spmedicalgroup.com.br',
+      senha: 'adm4545',
+    };
+  }
 
-    realizarLogin = async () => {
-        //nao temos mais  console log.
-        //vamos utilizar console.warn.
-    
-        //apenas para teste.
-        console.warn(this.state.email + ' ' + this.state.senha);
-    
-        const resposta = await api.post('/login', {
-          email: this.state.email, //adm@spmedicalgroup.com.br
-          senha: this.state.senha, //adm4545
-        });
+  realizarLogin = async () => {
+
+    console.warn(this.state.email + ' ' + this.state.senha);
+
+    const resposta = await api.post('/login', {
+      email: this.state.email, //adm@spmedicalgroup.com.br
+      senha: this.state.senha, //adm4545
+    });
+
+    console.warn('Requisição feita')
 
     const token = resposta.data.token;
     await AsyncStorage.setItem('userToken', token);
 
-    if (resposta.status == 200){
-        console.warn('Login Realizado');
-        this.props.navigation.navigate('');
-    
+    if (resposta.status == 200) {
+      console.warn('Login Realizado');
+      this.props.navigation.navigate('');
+
     }
 
     console.warn(token);
 
-};
+  };
 
-render() {
-    return(
+  render() {
+    return (
       <ImageBackground
-  
-      source={require('../../assets/Login.png')}
-      style={StyleSheet.absoluteFillObject}>
-      
-      <View>
-  
-  
-  
-      </View>
-  
+
+        source={require('../../assets/Login.png')}
+        style={StyleSheet.absoluteFillObject}>
+
+
+        <View style={StyleSheet.absoluteFillObject}>
+          <View style={styles.main}>
+
+            <TextInput
+              style={styles.inputLogin}
+              placeholder="E-mail"
+              placeholderTextColor="#000"
+              keyboardType="email-address"
+              onChangeText={email => this.setState({ email })}
+            />
+
+            <TextInput
+              style={styles.inputLogin}
+              placeholder="Senha"
+              placeholderTextColor="#000"
+              keyboardType="default"
+              secureTextEntry={true}
+              onChangeText={senha => this.setState({ senha })}
+            />
+
+            <TouchableOpacity
+              style={styles.btnLogin}
+              onPress={this.realizarLogin}>
+              <Text style={styles.btnLoginText}>ENTRAR</Text>
+            </TouchableOpacity>
+
+          </View>
+        </View>
+
       </ImageBackground>
     )
   }
-} 
+}
+
+
+const styles = StyleSheet.create({
+
+  overlay: {
+    ...StyleSheet.absoluteFillObject
+  },
+
+  main: {
+    flex: 1,
+    //backgroundColor: '#F1F1F1', retirar pra nao ter conflito.
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+  },
+
+  mainImgLogin: { 
+    //confirmar que sera branco
+    height: 105, //altura
+    width: 110, //largura img nao é quadrada
+    margin: 60, //espacamento em todos os lados,menos pra cima.
+    marginTop: 0, // tira espacamento pra cima
+},
+
+inputLogin: {
+    width: 240, 
+    marginBottom: 40, 
+    fontSize: 18,
+    color: '#000',
+    borderBottomColor: '#FFF', 
+    borderBottomWidth: 2, 
+    backgroundColor: '#FFF'
+},
+
+btnLoginText: {
+    fontSize: 12, //aumentar um pouco
+    fontFamily: 'Sarabun', //troca de fonte
+    fontStyle:'normal',
+    fontWeight:'bold',
+    color: '#000', //mesma cor identidade
+    letterSpacing: 1, //espacamento entre as letras
+    textTransform: 'uppercase', //estilo maiusculo
+},
+btnLogin: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 38,
+    width: 240,
+    backgroundColor: '#3DC874',
+    borderColor: '#000',
+    borderWidth: 1,
+    borderRadius: 4,
+    shadowOffset: { height: 1, width: 1 },
+},
+});

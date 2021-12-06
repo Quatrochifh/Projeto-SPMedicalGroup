@@ -21,7 +21,7 @@ const routing = (
         <Route path="/adm" component={Administrador} />
         <Route path="/Login" component={Login} />
         <Route path="/notfound" component={NotFound} />
-        <Redirect to="/Notfound" />
+        <Redirect to="/home" />
       </Switch>
     </div>
   </Router>

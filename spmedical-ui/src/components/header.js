@@ -1,4 +1,4 @@
- import React, { Component } from 'react';
+ import React from 'react';
  import "../assets/css/Style.css";
  import logo from "../assets/img/logo_spmedgroup_v2 1.png";
 
