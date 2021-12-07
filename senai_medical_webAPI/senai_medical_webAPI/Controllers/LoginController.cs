@@ -29,6 +29,7 @@ namespace senai_medical_webAPI.Controllers
             _usuarioRepository = new UsuarioRepository();
         }
 
+
         [HttpPost]
 
         public IActionResult Login(LoginViewModel login)

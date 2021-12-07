@@ -26,7 +26,7 @@ namespace senai_medical_webAPI.Controllers
         }
 
 
-        [Authorize(Roles = "1")]
+        [Authorize(Roles = "3")]
         [HttpGet]
         public IActionResult Get()
         {

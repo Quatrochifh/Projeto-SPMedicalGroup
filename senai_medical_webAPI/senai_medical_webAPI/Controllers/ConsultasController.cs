@@ -45,6 +45,7 @@ namespace senai_medical_webAPI.Controllers
         }
 
         /// Lista todas as consultas de um usuario
+        /// //minhas
         [Authorize(Roles = "2, 3")]
         [HttpGet]
         public IActionResult Get()

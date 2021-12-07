@@ -1,15 +1,17 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import React,{ Component } from 'react';
-import { StyleSheet, ImageBackground, View, TextInput, TouchableOpacity,Text } from 'react-native'
+import React, { Component } from 'react';
+import { StyleSheet, ImageBackground, View, TextInput, TouchableOpacity, Text } from 'react-native'
 import api from '../services/api';
+import jwtDecode from 'jwt-decode';
+
 
 export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'adm@spmedicalgroup.com.br',
-      senha: 'adm4545',
+      email: 'henrique@gmail.com',
+      senha: 'henrique987',
     };
   }
 
@@ -29,11 +31,34 @@ export default class Login extends Component {
 
     if (resposta.status == 200) {
       console.warn('Login Realizado');
-      this.props.navigation.navigate('');
+      //this.props.navigation.navigate('');
 
+      console.warn(jwtDecode(token).role);
+
+      var regra = jwtDecode(token).role
+
+      console.warn("chegou aui" + regra)
+
+
+
+      switch (regra) {
+        case "2":
+          console.warn('certo1');
+          //  this.props.history.push('/Medico')
+          break;
+        case "3":
+          console.warn('certo2');
+          this.props.navigation.navigate('Paciente'); //tem que ser mesmo nome.
+          break;
+
+        default:
+          console.warn('certo3');
+          this.props.navigation.navigate('Medico');
+          break;
+      }
     }
 
-    console.warn(token);
+    //  console.warn(token);
 
   };
 
@@ -95,42 +120,43 @@ const styles = StyleSheet.create({
     height: '100%',
   },
 
-  mainImgLogin: { 
+  mainImgLogin: {
     //confirmar que sera branco
     height: 105, //altura
     width: 110, //largura img nao é quadrada
     margin: 60, //espacamento em todos os lados,menos pra cima.
     marginTop: 0, // tira espacamento pra cima
-},
+  },
 
-inputLogin: {
-    width: 240, 
-    marginBottom: 40, 
+  inputLogin: {
+    width: 230,
+    height: 40,
+    marginBottom: 40,
     fontSize: 18,
     color: '#000',
-    borderBottomColor: '#FFF', 
-    borderBottomWidth: 2, 
+    borderBottomColor: '#FFF',
+    borderBottomWidth: 2,
     backgroundColor: '#FFF'
-},
+  },
 
-btnLoginText: {
+  btnLoginText: {
     fontSize: 12, //aumentar um pouco
     fontFamily: 'Sarabun', //troca de fonte
-    fontStyle:'normal',
-    fontWeight:'bold',
+    fontStyle: 'normal',
+    fontWeight: 'bold',
     color: '#000', //mesma cor identidade
     letterSpacing: 1, //espacamento entre as letras
     textTransform: 'uppercase', //estilo maiusculo
-},
-btnLogin: {
+  },
+  btnLogin: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: 38,
-    width: 240,
+    height: 30,
+    width: 100,
     backgroundColor: '#3DC874',
     borderColor: '#000',
     borderWidth: 1,
     borderRadius: 4,
     shadowOffset: { height: 1, width: 1 },
-},
+  },
 });
