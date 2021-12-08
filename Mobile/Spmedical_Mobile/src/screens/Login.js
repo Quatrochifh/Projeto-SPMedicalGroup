@@ -10,8 +10,8 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'henrique@gmail.com',
-      senha: 'henrique987',
+      email: 'roberto.possarle@spmedicalgroup.com.br',
+      senha: 'possarle456',
     };
   }
 
@@ -43,17 +43,15 @@ export default class Login extends Component {
 
       switch (regra) {
         case "2":
-          console.warn('certo1');
-          //  this.props.history.push('/Medico')
+          console.warn('certo3');
+          this.props.navigation.navigate('Medico');
           break;
         case "3":
           console.warn('certo2');
-          this.props.navigation.navigate('Paciente'); //tem que ser mesmo nome.
+          this.props.navigation.navigate('Paciente');
           break;
 
         default:
-          console.warn('certo3');
-          this.props.navigation.navigate('Medico');
           break;
       }
     }

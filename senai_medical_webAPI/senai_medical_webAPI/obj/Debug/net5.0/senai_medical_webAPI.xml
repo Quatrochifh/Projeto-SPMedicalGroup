@@ -16,6 +16,7 @@
         </member>
         <member name="M:senai_medical_webAPI.Controllers.ConsultasController.Get">
             Lista todas as consultas de um usuario
+            //minhas
         </member>
     </members>
 </doc>
