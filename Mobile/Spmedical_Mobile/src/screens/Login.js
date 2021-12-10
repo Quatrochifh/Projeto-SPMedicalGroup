@@ -43,11 +43,11 @@ export default class Login extends Component {
 
       switch (regra) {
         case "2":
-          console.warn('certo3');
+          console.warn('certo Medico');
           this.props.navigation.navigate('Medico');
           break;
         case "3":
-          console.warn('certo2');
+          console.warn('certo Paciente');
           this.props.navigation.navigate('Paciente');
           break;
 
