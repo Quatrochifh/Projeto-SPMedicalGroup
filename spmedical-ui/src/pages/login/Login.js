@@ -11,8 +11,8 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      senha: '',
+      email: 'adm@spmedicalgroup.com.br',
+      senha: 'adm4545',
       erroMensagem: '',
       isLoading: false,
     };
@@ -107,7 +107,7 @@ export default class Login extends Component {
 
             <form className="box_cadastrolo" onSubmit={this.efetuaLogin} >
 
-              <h2 className="usu_cadalo">cadastrar</h2>
+              <h2 className="usu_cadalo">login</h2>
 
 
               <input className="cadastro_elo" placeholder="    Email" value={this.state.email} onChange={this.atualizaStateCampo}
