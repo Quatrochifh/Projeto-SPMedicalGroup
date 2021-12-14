@@ -2,7 +2,9 @@
 import { Component } from 'react';
 import axios from "axios";
 
-import img from '../../assets/img/drhelena.png'
+//import img from '../../assets/img/drhelena.png'
+
+
 
 export default class Administrador extends Component{
     constructor(props){
@@ -20,21 +22,7 @@ export default class Administrador extends Component{
         };
     };
 
-    buscarTipoEventos = () => {
-        console.log('agora vamos fazer a chamada para a api.');
 
-        fetch('http://localhost:5000/api/??????????', {
-          headers: {
-            Authorization: 'Bearer ' + localStorage.getItem('usuario-login'),
-          },
-        })
-    
-          .then((resposta) => resposta.json())
-    
-          .then((dados) => this.setState({ listaTiposEventos: dados }))
-    
-          .catch((erro) => console.log(erro));
-      };
 
 
 
@@ -84,7 +72,7 @@ export default class Administrador extends Component{
     }
 
     buscaConsultas = () => {
-        axios("http://localhost:5000/api/Consultas/listarTodas", {
+        axios("http://localhost:5000/api/consultas", {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -106,7 +94,7 @@ export default class Administrador extends Component{
             dataConsulta: new Date(this.state.dataConsulta),
             IdSituacao: this.state.IdSituacao
         };
-        axios.post("http://localhost:5000/api/Consultas", consulta, {
+        axios.get("http://localhost:5000/api/consultas", consulta, {
             headers: {
                 'Authoriztion': 'Bearer' + localStorage.getItem('usuario-login')
             }
@@ -142,24 +130,6 @@ export default class Administrador extends Component{
             <div>
                 <main class="fundo_cadastroadm">
         <section class="sectionadm">
-
-            <form class="box_Listaradm">
-
-                <h2 class="usu_cadaadm">usuario cadastrados</h2>
-
-                <div class="qualquer">
-                {/* {listaConsultas.map((listar) => { */}
-                    {/* return ( */}
-                    <div class="retangulos1adm">
-                        <img class="imagemfotinhoadm" src={img} alt="drhelena" />
-                        <div class="slaadm" >
-                            <span class="nome_listaadm">DRA. Helena Strada</span>
-                            <span class="que_eadm">Medico</span>
-                        </div>     
-                    </div> 
-        
-                </div>
-            </form>
 
     <form class="box_cadastroadm">
 

@@ -126,6 +126,7 @@ body {
     margin-top: 14%;
     width: 543px;
     height: 520px;
+    
 }
 
 .usu_cada{
@@ -547,6 +548,7 @@ body {
     border-radius: 86px;
     display: inline-grid;
     margin-inline-start: 6vw;
+    margin-left: 500px;
     margin-top: 14%;
     width: 543px;
     height: 592px;
