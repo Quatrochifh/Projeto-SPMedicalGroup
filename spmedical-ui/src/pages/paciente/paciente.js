@@ -30,30 +30,29 @@ export default class ListarMinhas extends Component {
 
     render() {
         return (
-            <main class="fundo_cadastromed">
-                <section className="sectionmed">
-                    <form className="box_Listarmed">
-                        <h2 className="usu_cadamed">usuario cadastrados</h2>
+            <main class="fundo_cadastropac">
+                <section className="sectionpac">
+                    <form className="box_Listarpac">
+                        <h2 className="usu_cadapac">usuario cadastrados</h2>
                         {
                             this.state.Listar.map((item) => {
                                 return (
-                                    <div className="qualquermed">
-                                        <div className="retangulos1med">
-                                            <div className="slamed">
-                                                <span className="nome_listamed">{item.idpacienteNavigation.nomePac}</span>
+                                    <div className="qualquerpac">
+                                        <div className="retangulos1pac">
+                                            <div className="slapac">
+                                                <span className="nome_listapac">{item.idmedicoNavigation.nomeMedico}</span>
                                             </div>
                                         </div>
-                                        <div className="retangulos2med">
-                                            <div className="slamed">
-                                                <span className="nome_listamed">{item.dataConsulta}</span>
+                                        <div className="retangulos2pac">
+                                            <div className="slapac">
+                                                <span className="nome_listapac">{item.dataConsulta}</span>
                                             </div>
                                         </div>
-                                        <div className="retangulos3med">
-                                            <div className="slamed">
-                                                <span className="nome_listamed">{item.idsituacaoNavigation.qualSituacao}</span>
+                                        <div className="retangulos3pac">
+                                            <div className="slapac">
+                                                <span className="nome_listapac">{item.idsituacaoNavigation.qualSituacao}</span>
                                             </div>
                                         </div>
-                                        
                                     </div>
                                 )
                             })

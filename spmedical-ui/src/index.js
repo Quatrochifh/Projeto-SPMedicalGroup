@@ -12,6 +12,8 @@ import App from '../src/pages/home/App';
 import Administrador from './pages/administrador/Administrador_Consulta'
 import NotFound from '../src/pages/notfound/NotFound';
 import Login from '../src/pages/login/Login'
+import Medico from '../src/pages/medico/Medico'
+import Paciente from '../src/pages/paciente/paciente'
 
 const routing = (
   <Router>
@@ -20,6 +22,8 @@ const routing = (
         <Route exact path="/home" component={App} />
         <Route path="/adm" component={Administrador} />
         <Route path="/Login" component={Login} />
+        <Route path="/Medico" component={Medico}/>
+        <Route path="/Paciente" component={Paciente}/>
         <Route path="/notfound" component={NotFound} />
         <Redirect to="/home" />
       </Switch>

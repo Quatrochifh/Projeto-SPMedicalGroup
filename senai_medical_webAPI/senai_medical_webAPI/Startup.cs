@@ -85,6 +85,8 @@ namespace senai_medical_webAPI
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors("CorsPolicy");     //Usar cors
+
             app.UseRouting();
 
             // Enable middleware to serve generated Swagger as a JSON endpoint.
@@ -104,7 +106,7 @@ namespace senai_medical_webAPI
             // Habilita a autoriza��o
             app.UseAuthorization();         // 403
 
-            app.UseCors("CorsPolicy");     //Usar cors
+
 
 
             app.UseEndpoints(endpoints =>

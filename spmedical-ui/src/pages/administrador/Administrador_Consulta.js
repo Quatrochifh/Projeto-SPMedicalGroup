@@ -6,84 +6,19 @@ import axios from "axios";
 
 
 
-export default class Administrador extends Component{
-    constructor(props){
+export default class Administrador extends Component {
+    constructor(props) {
         super(props);
         this.state = {
-            listaConsultas: [],
-            listaPacientes: [],
-            listaMedicos: [],
-            listaSituacao: [],
-            listaTodos: [],
-            IdPaciente: 0,
-            IdMedico: 0,
-            IdSituacao: 0,
-            dataConsulta: new Date()
+            IdPaciente: '',
+            IdMedico: '',
+            IdSituacao: '3',
+            dataConsulta: new Date(),
+            descricaoConsulta: ''
         };
     };
 
 
-
-
-
-    buscaPacientes = () => {
-        axios("http://localhost:5000/api/pacientes", {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            }
-        })
-            .then(resposta => {
-                if (resposta.status === 200) {
-                    this.state({ listaPacientes: resposta.data })
-                    console.log(this.state.listaPacientes)
-                }
-            })
-            .catch(erro => console.log(erro))
-    }
-
-    buscaMedicos = () => {
-        axios("http://localhost:5000/api/medicos", {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            }
-        })
-            .then(resposta => {
-                if (resposta.status === 200) {
-                    this.state({ listaMedicos: resposta.data })
-                    console.log(this.state.listaMedicos)
-                }
-            })
-            .catch(erro => console.log(erro))
-    }
-
-    buscaSituacoes = () => {
-        axios("http://localhost:5000/api/situacoes", {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            }
-        })
-            .then(resposta => {
-                if (resposta.status === 200) {
-                    this.state({ listaSituacao: resposta.data })
-                    console.log(this.state.listaSituacao)
-                }
-            })
-            .catch(erro => console.log(erro))
-    }
-
-    buscaConsultas = () => {
-        axios("http://localhost:5000/api/consultas", {
-            headers: {
-                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
-            }
-        })
-            .then(resposta => {
-                if (resposta.status === 200) {
-                    this.state({ listaConsultas: resposta.data })
-                }
-            })
-            .catch(erro => console.log(erro))
-    }
 
     cadastrarConsulta = (event) => {
         event.preventDefault();
@@ -92,11 +27,12 @@ export default class Administrador extends Component{
             IdPaciente: this.state.IdPaciente,
             IdMedico: this.state.IdMedico,
             dataConsulta: new Date(this.state.dataConsulta),
-            IdSituacao: this.state.IdSituacao
+            IdSituacao: this.state.IdSituacao,
+            descricaoConsulta: this.state.descricaoConsulta
         };
-        axios.get("http://localhost:5000/api/consultas", consulta, {
+        axios.post("http://localhost:5000/api/consultas", consulta, {
             headers: {
-                'Authoriztion': 'Bearer' + localStorage.getItem('usuario-login')
+                'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
         })
             .then(resposta => {
@@ -112,10 +48,6 @@ export default class Administrador extends Component{
 
 
     componentDidMount() {
-        this.buscaConsultas();
-        this.buscaPacientes();
-        this.buscaMedicos();
-        this.buscaSituacoes();
     }
 
     atualizaStateCampo = (campo) => {
@@ -125,54 +57,54 @@ export default class Administrador extends Component{
 
 
 
-    render(){
-        return(
+    render() {
+        return (
             <div>
                 <main class="fundo_cadastroadm">
-        <section class="sectionadm">
+                    <section class="sectionadm">
 
-    <form class="box_cadastroadm">
+                        <form onSubmit={this.cadastrarConsulta} class="box_cadastroadm">
 
-<h2 class="usu_cadaadm">cadastrar</h2>
-
-
-<input class="cadastro_padm" placeholder="       Nome Paciente" type="text" name="NomePac"
-    id="Consuta__NomePac" />
+                            <h2 class="usu_cadaadm">cadastrar</h2>
 
 
-<input class="cadastro_madm" placeholder="       Nome Medico" type="text" name="NomeMed"
-    id="Consuta__NomeMed" />
+                            <input class="cadastro_padm" value={this.state.IdPaciente} onChange={this.atualizaStateCampo} placeholder="       ID Paciente" type="text" name="IdPaciente"
+                                id="Consuta__NomePac" />
 
 
-<div class="Situação_abre">
-
-    <select name="" id="">
-        <option value="" disabled selected>Situação</option>
-        <option value="ad" >Realizada</option>
-        <option value="med" >Agendada</option>
-        <option value="pac">Cancelada</option>
-    </select>
-
-</div>
-
-<input class="cadastro_dadm" placeholder="       Data do agendamento da consulta" type="text"
-    name="NomeMed" id="Consuta__NomeMed" />
-
-<input class="cadastro_dcadm" placeholder="       Descrição da consulta" type="text" name="NomeMed"
-    id="Consuta__NomeMed" />
+                            <input class="cadastro_madm"  value={this.state.IdMedico} onChange={this.atualizaStateCampo} placeholder="       ID Medico" type="text" name="IdMedico"
+                                id="Consuta__NomeMed" />
 
 
-<button class="btn__cadastroadm" id="btn__cadastro" href="#">
-    Cadastre-se
-</button>
+                            {/* <div class="Situação_abre">
 
-</form>
+                                <select  value={this.state.IdSituacao} onChange={this.atualizaStateCampo} name="IdSituacao" id="">
+                                    <option value="" disabled selected>Situação</option>
+                                    <option value="ad" >Realizada</option>
+                                    <option value="med" >Agendada</option>
+                                    <option value="pac">Cancelada</option>
+                                </select>
+
+                            </div> */}
+
+                            <input class="cadastro_dadm" value={this.state.dataConsulta} onChange={this.atualizaStateCampo} placeholder="       Data do agendamento da consulta" type="date"
+                                name="dataConsulta" id="Consuta__NomeMed" />
+
+                            <input class="cadastro_dcadm" value={this.state.descricaoConsulta} onChange={this.atualizaStateCampo} placeholder="       Descrição da consulta" type="text" name="descricaoConsulta"
+                                id="Consuta__NomeMed" />
+
+
+                            <button class="btn__cadastroadm" type="submit" id="btn__cadastro" href="#">
+                                Cadastre-se
+                            </button>
+
+                        </form>
 
 
 
-        </section>
+                    </section>
 
-        </main>
+                </main>
 
             </div>
         )

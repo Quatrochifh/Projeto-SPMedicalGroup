@@ -740,6 +740,15 @@ option{
 
 /* ---AREA DO MEDICO---AREA DO MEDICO---AREA DO MEDICO---AREA DO MEDICO---AREA DO MEDICO */
 
+.qualquermed{
+    display: flex;
+    width: 1048;
+    overflow: auto;
+    margin-bottom: 130px;
+    height: 328px;
+    margin-left: 33px;
+}
+
 
 .fundo_cadastromed{
     background-image: url("../Img/Area_medico.png");
@@ -827,7 +836,7 @@ option{
     border-radius: 57px;
     width: 272px;
     height: 70px;
-    margin-bottom: 17px;
+    margin-bottom: 110px;
     margin-left: 48px;
     display: flex;
     align-content: stretch;
