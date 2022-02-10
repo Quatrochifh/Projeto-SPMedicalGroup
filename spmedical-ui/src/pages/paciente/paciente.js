@@ -10,7 +10,7 @@ export default class ListarMinhas extends Component {
     }
 
     MinhaConsulta = () => {
-        axios.get('http://localhost:5000/api/consultas', {
+        axios.get('https://62055b4c161670001741b9d3.mockapi.io/Consulta', {
             headers: {
                 'Authorization': 'Bearer ' + localStorage.getItem('usuario-login')
             }
@@ -40,17 +40,17 @@ export default class ListarMinhas extends Component {
                                     <div className="qualquerpac">
                                         <div className="retangulos1pac">
                                             <div className="slapac">
-                                                <span className="nome_listapac">{item.idmedicoNavigation.nomeMedico}</span>
+                                                <span className="nome_listapac">{item.iDMedicoNavigation.NomeMedico}</span>
                                             </div>
                                         </div>
                                         <div className="retangulos2pac">
                                             <div className="slapac">
-                                                <span className="nome_listapac">{item.dataConsulta}</span>
+                                                <span className="nome_listapac">{item.DataConsulta}</span>
                                             </div>
                                         </div>
                                         <div className="retangulos3pac">
                                             <div className="slapac">
-                                                <span className="nome_listapac">{item.idsituacaoNavigation.qualSituacao}</span>
+                                                <span className="nome_listapac">{item.DescricaoConsulta}</span>
                                             </div>
                                         </div>
                                     </div>

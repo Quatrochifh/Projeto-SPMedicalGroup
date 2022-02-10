@@ -8090,19 +8090,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\39220866838\\.nuget\\packages\\": {}
+    "C:\\Users\\39220866838.INFOSCS\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\39220866838\\Documents\\Projeto-SPMedicalGroup\\senai_medical_webAPI\\senai_medical_webAPI\\senai_medical_webAPI.csproj",
+      "projectUniqueName": "C:\\Users\\39220866838.INFOSCS\\Documents\\Projeto-SPMedicalGroup\\senai_medical_webAPI\\senai_medical_webAPI\\senai_medical_webAPI.csproj",
       "projectName": "senai_medical_webAPI",
-      "projectPath": "C:\\Users\\39220866838\\Documents\\Projeto-SPMedicalGroup\\senai_medical_webAPI\\senai_medical_webAPI\\senai_medical_webAPI.csproj",
-      "packagesPath": "C:\\Users\\39220866838\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\39220866838\\Documents\\Projeto-SPMedicalGroup\\senai_medical_webAPI\\senai_medical_webAPI\\obj\\",
+      "projectPath": "C:\\Users\\39220866838.INFOSCS\\Documents\\Projeto-SPMedicalGroup\\senai_medical_webAPI\\senai_medical_webAPI\\senai_medical_webAPI.csproj",
+      "packagesPath": "C:\\Users\\39220866838.INFOSCS\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\39220866838.INFOSCS\\Documents\\Projeto-SPMedicalGroup\\senai_medical_webAPI\\senai_medical_webAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\39220866838\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\39220866838.INFOSCS\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
